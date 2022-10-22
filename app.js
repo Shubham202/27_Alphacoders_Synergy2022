@@ -15,10 +15,6 @@ mongoose.connect(
     { useNewUrlParser: true }
 );
 
-app.get("/", (req, res) => {
-    res.render("index");
-});
-
 const studentSchema = new mongoose.Schema({
     Name: String,
     Aadhar_number: Number,
@@ -29,7 +25,11 @@ const studentSchema = new mongoose.Schema({
     Pin_code: Number
 });
 
+const Student = mongoose.model("Student", studentSchema);
 
+app.get("/", (req, res) => {
+    res.render("index");
+});
 
 app.listen(3000, () => {
     console.log("Server started on port 3000");
