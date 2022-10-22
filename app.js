@@ -17,12 +17,18 @@ mongoose.connect(
 
 const studentSchema = new mongoose.Schema({
     Name: String,
-    Aadhar_number: Number,
     Email: String,
     Password: String,
-    Blood_group: String,
     Contact_number: Number,
-    Pin_code: Number
+    Roll_number: Number
+});
+
+const adminSchema = new mongoose.Schema({
+    Name: String,
+    Email: String,
+    Password: String,
+    Contact_number: Number,
+    Staff_number: Number
 });
 
 const Student = mongoose.model("Student", studentSchema);
